@@ -5,7 +5,7 @@ addomainvar=$3
 addomaincapsvar=${addomainvar^^}
 
 # Install all the required packages
-sudo -E apt -y install tmux vim dconf-tools virtualbox-5.2 virtualbox-ext-pack google-chrome-stable openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libssl-dev ccache libgl1-mesa-dev libxml2-utils samba system-config-samba gdebi-core sagasu xsltproc unzip libx11-6:i386 libxext6:i386 libxmu-dev:i386 rpm 
+sudo -E apt -y install tmux vim dconf-tools virtualbox-5.2 virtualbox-ext-pack google-chrome-stable openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libssl-dev ccache libgl1-mesa-dev libxml2-utils samba system-config-samba gdebi-core sagasu xsltproc unzip libx11-6:i386 libxext6:i386 libxmu-dev:i386 rpm winbind libnss-winbind
 
 # Create a VirtualBox disk from /dev/sda
 sudo usermod -a -G disk $USER
@@ -57,6 +57,7 @@ ad_gpo_access_control = permissive' /etc/sssd/sssd.conf
 sudo service sssd restart
 
 sudo sed -i "/sudoers: *files sss/c\sudoers:        files" /etc/nsswitch.conf
+sudo sed -i "/(hosts\:.*)\s& wins" /etc/nsswitch.conf
 
 # Change Caps Lock to Control
 dconf write /org/gnome/desktop/input-sources/xkb-options "['ctrl:nocaps']"
