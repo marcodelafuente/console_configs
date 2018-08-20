@@ -6,6 +6,8 @@ let g:netrw_browse_split = 4
 
 let g:deoplete#enable_at_startup = 1
 
+let g:syntastic_loc_list_height=3
+
 autocmd VimEnter * NERDTree
 autocmd VimEnter * TagbarToggle
 
