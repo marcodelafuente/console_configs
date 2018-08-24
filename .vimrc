@@ -10,6 +10,7 @@ let g:syntastic_loc_list_height=3
 
 autocmd VimEnter * NERDTree
 autocmd VimEnter * TagbarToggle
+autocmd VimEnter * colorscheme elflord
 
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 set list
