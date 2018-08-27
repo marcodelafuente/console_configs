@@ -1,11 +1,12 @@
 #!/bin/bash
-passvar=$1
-USE_PROXY=$2
-addomainvar=$3
+uservar=$1
+passvar=$2
+USE_PROXY=$3
+addomainvar=$4
 addomaincapsvar=${addomainvar^^}
 
 # Install all the required packages
-sudo -E apt -y install tmux vim dconf-tools openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libssl-dev ccache libgl1-mesa-dev libxml2-utils samba system-config-samba gdebi-core sagasu xsltproc unzip libx11-6:i386 libxext6:i386 libxmu-dev:i386 rpm winbind libnss-winbind
+sudo -E apt -y install tmux vim bc dconf-tools openjdk-8-jdk git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev gcc-multilib g++-multilib libc6-dev-i386 lib32ncurses5-dev x11proto-core-dev libx11-dev lib32z-dev libssl-dev ccache libgl1-mesa-dev libxml2-utils samba system-config-samba gdebi-core sagasu xsltproc unzip libx11-6:i386 libxext6:i386 libxmu-dev:i386 rpm winbind libnss-winbind
 
 # Add computer to the Active Directory
 sudo -E apt -y install realmd sssd sssd-tools samba-common krb5-user packagekit samba-common-bin samba-libs adcli ntp
